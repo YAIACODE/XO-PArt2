@@ -1,0 +1,41 @@
+<!-- I also make this code to add the Flipping effect in the other page so this is just for testing the flipping Design-->
+<!-- الصفحة دي عملتها علشان اصمم حركة الدوران للنقاط اللى بيجمعلها اللاعب !!-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Element and Show Increment</title>
+  <style>
+    #numberDisplay {
+      width: 100px;
+      height: 50px;
+      background-color: #007bff;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      transition: transform 0.5s;
+    }
+  </style>
+</head>
+<body>
+  <div id="numberDisplay">0</div>
+
+  <button onclick="flipAndIncrement()">Flip and Increment</button>
+
+  <script>
+    let counter = 0;
+
+    function flipAndIncrement() {
+      counter++;
+      document.getElementById('numberDisplay').innerHTML = counter % 10;
+      document.getElementById('numberDisplay').style.transform = "rotateY(180deg)";
+      setTimeout(function() {
+        document.getElementById('numberDisplay').style.transform = "rotateY(0deg)";
+      }, 500);
+    }
+  </script>
+</body>
+</html>
